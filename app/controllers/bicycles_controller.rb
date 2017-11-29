@@ -1,4 +1,4 @@
-class BicyclesController < OpenReaderController
+class BicyclesController < OpenReadController
   before_action :set_bicycle, only: %i[update destroy]
 
   # GET /bicycles
@@ -10,7 +10,7 @@ class BicyclesController < OpenReaderController
 
   # GET /bicycles/1
   def show
-    render json: @bicycle
+    render json: Bicycle.find(params[:id])
   end
 
   # POST /bicycles

@@ -13,7 +13,8 @@ curl "${API}${URL_PATH}" \
       "model": "'"${MODEL}"'",
       "color": "'"${COLOR}"'",
       "serial_number": "'"${SERIAL_NUMBER}"'",
-      "size": "'"${SIZE}"'"
+      "size": "'"${SIZE}"'",
+      "url": "'"${URL}"'"
     }
   }'
 

@@ -47,6 +47,6 @@ class BicyclesController < OpenReadController
 
   # Only allow a trusted parameter "white list" through.
   def bicycle_params
-    params.require(:bicycle).permit(:make, :model, :color, :serial_number, :size)
+    params.require(:bicycle).permit(:make, :model, :color, :serial_number, :size, :url)
   end
 end

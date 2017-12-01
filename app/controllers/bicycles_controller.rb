@@ -9,8 +9,8 @@ class BicyclesController < OpenReadController
   end
 
   # GET /bicycles/1
-  def show
-    render json: Bicycle.find(params[:id])
+  def mine
+    render json: current_user.bicycles.all
   end
 
   # POST /bicycles

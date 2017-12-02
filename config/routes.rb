@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :events
   resources :bicycles, except: %i[new edit show]
   get '/bicycles/mine' => 'bicycles#mine'
   resources :examples, except: %i[new edit]

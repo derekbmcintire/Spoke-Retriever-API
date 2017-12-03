@@ -9,7 +9,7 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
     "event": {
-      "type": "'"${TYPE}"'",
+      "event_type": "'"${TYPE}"'",
       "location": "'"${LOCATION}"'"
     }
   }'

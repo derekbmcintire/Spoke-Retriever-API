@@ -1,5 +1,4 @@
 class Event < ApplicationRecord
-  has_many :bicycles
   belongs_to :user
-  validates_presence_of :type, :location
+  validates_presence_of :event_type, :location
 end

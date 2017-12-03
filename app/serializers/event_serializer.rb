@@ -1,3 +1,3 @@
 class EventSerializer < ActiveModel::Serializer
-  attributes :id, :type, :location
+  attributes :id, :event_type, :location
 end

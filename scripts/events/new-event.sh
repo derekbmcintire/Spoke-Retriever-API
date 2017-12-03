@@ -10,7 +10,8 @@ curl "${API}${URL_PATH}" \
   --data '{
     "event": {
       "event_type": "'"${TYPE}"'",
-      "location": "'"${LOCATION}"'"
+      "location": "'"${LOCATION}"'",
+      "bicycle_id": "'"${BIKE}"'"
     }
   }'
 

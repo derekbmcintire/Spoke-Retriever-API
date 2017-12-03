@@ -43,9 +43,9 @@ In addition to the basic requirements, I added some special features.
 ![Spoke Retriever Wireframe](https://c1.staticflickr.com/5/4538/23906244027_eeca8a2e9e.jpg)
 
 ## Entity Relationship Diagram
-V.1
+- V.1
 ![ERD v.1](https://c1.staticflickr.com/5/4556/38786592582_2cd506a8c3.jpg)
-V.2
+- V.2
 ![ERD v.2](https://c1.staticflickr.com/5/4561/38786592192_be3f51508a.jpg)
 
 ## Updates

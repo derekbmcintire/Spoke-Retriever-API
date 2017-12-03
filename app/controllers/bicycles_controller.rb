@@ -8,9 +8,14 @@ class BicyclesController < OpenReadController
     render json: @bicycles
   end
 
-  # GET /bicycles/1
+  # GET /mine
   def mine
     render json: current_user.bicycles.all
+  end
+
+  # GET /stolen
+  def stolen
+    render json: Bicycle.joins(:events).where("event_type='stolen'")
   end
 
   # POST /bicycles

@@ -1,5 +1,5 @@
 class BicyclesController < OpenReadController
-  before_action :set_bicycle, only: %i[update destroy]
+  before_action :set_bicycle, only: %i[update destroy recover]
 
   # GET /bicycles
   def index
@@ -16,6 +16,10 @@ class BicyclesController < OpenReadController
   # GET /stolen
   def stolen
     render json: Bicycle.joins(:events).where("event_type='stolen'")
+  end
+
+  def recover
+    @bicycle.events.last.destroy
   end
 
   # POST /bicycles

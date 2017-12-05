@@ -9,6 +9,6 @@ class BicycleSerializer < ActiveModel::Serializer
   end
 
   def stolen
-    object.events.where("event_type='stolen'").count.positive?
+    object.events.order(:created_at).last&.event_type=='stolen'
   end
 end

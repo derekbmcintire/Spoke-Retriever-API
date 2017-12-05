@@ -15,7 +15,7 @@ class BicyclesController < OpenReadController
 
   # GET /stolen
   def stolen
-    render json: Bicycle.joins(:events).where("event_type='stolen'")
+    render json: @bicycle.events.order(:created_at).last&.where('event_type="stolen"')
   end
 
   def recover

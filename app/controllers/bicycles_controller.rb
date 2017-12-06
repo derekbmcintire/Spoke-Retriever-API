@@ -3,14 +3,14 @@ class BicyclesController < OpenReadController
 
   # GET /bicycles
   def index
-    @bicycles = Bicycle.all
+    @bicycles = Bicycle.all.order(created_at: :desc)
 
     render json: @bicycles
   end
 
   # GET /mine
   def mine
-    render json: current_user.bicycles.all
+    render json: current_user.bicycles.all.order(created_at: :desc)
   end
 
   # GET /stolen

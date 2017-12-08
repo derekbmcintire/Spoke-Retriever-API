@@ -1,16 +1,25 @@
 class BicyclesController < OpenReadController
-  before_action :set_bicycle, only: %i[update destroy]
+  before_action :set_bicycle, only: %i[update destroy recover]
 
   # GET /bicycles
   def index
-    @bicycles = Bicycle.all
+    @bicycles = Bicycle.all.order(created_at: :desc)
 
     render json: @bicycles
   end
 
-  # GET /bicycles/1
+  # GET /mine
   def mine
-    render json: current_user.bicycles.all
+    render json: current_user.bicycles.all.order(created_at: :desc)
+  end
+
+  # GET /stolen
+  def stolen
+    render json: @bicycle.events.order(:created_at).last&.where('event_type="stolen"')
+  end
+
+  def recover
+    @bicycle.events.last.destroy
   end
 
   # POST /bicycles
